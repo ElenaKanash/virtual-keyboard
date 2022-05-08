@@ -123,7 +123,7 @@ body {
 	border-bottom: 1px solid #b5b5b5;
 	border-radius: 5px;
 	box-shadow: 0 0 3px -1px rgba(0, 0, 0, 0.3);
-	transition: all 0.2s;
+	transition: all 0.3s;
 	user-select: none;
 
 	&:hover {
@@ -133,16 +133,17 @@ body {
 }
 
 .btn.active {
-	background-color:cadetblue;
+//	background-color:cadetblue;
+	animation: btn_animation 0.5s linear;
 }
 
 .btn.remove {
-	animation: btn_animation 0.3s forwards;
+//	animation: btn_animation 0.5s linear;
 }
 
 @keyframes btn_animation {
 	0% {
-		background-color:cadetblue;
+		background-color:darkslateblue;
 	}
 	100% {
 		background-color:white;

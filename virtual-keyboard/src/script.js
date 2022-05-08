@@ -16,11 +16,12 @@ const keyboard = document.querySelector('.keyboard');
  //create buttons in keyboard
 let keysArray = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', 'Delete', 'CapsLock',  'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter', 'Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'ArrowUp', 'Shift', 'Control',  'Alt', ' ', 'Alt', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Control'];
 
-document.onkeydown = (event) => {
+/*  document.onkeydown = (event) => {
   console.log("key:" + event.key)
   console.log( "code:"+ event.code)
- // keysArray.push(event.key);
-}
+  keysArray.push(event.key);
+}*/
+
 
 //add buttons in keyboard
 createBtns();
@@ -46,11 +47,39 @@ function createBtns() {
       if (keysArray[i] === 'Control')   btn.classList.add('btn', 'btn_ctrl');
       if (keysArray[i] ==='Alt')  btn.classList.add('btn', 'btn_alt');
 
-      btn.setAttribute('data-btn', keysArray[i]);
+      btn.setAttribute('data', keysArray[i]);
 
     keyboard.append(btn);
   }
 }
+
+let btnKey = document.querySelector('.keyboard .btn');
+let btnKeys = document.querySelectorAll('.keyboard .btn');
+
+//Add active mode to buttons
+
+document.onkeydown = (event) => {
+ // console.log("key:" + event.key) //key:f
+ // console.log( "code:"+ event.code) //code:KeyF
+    btnKeys.forEach(el => {
+    el.classList.remove('active');
+  })
+  document.querySelector('.keyboard .btn[data = "'+ event.key +'"]').classList.add('active');
+}
+
+btnKeys.forEach(el => {
+  el.addEventListener('click', function(event) {
+    btnKeys.forEach(el => {
+      el.classList.remove('active')
+    });
+    let code = this.getAttribute('data');
+    this.classList.add('active');
+    console.log(code)
+  }
+  )
+})
+
+
 
 
 
