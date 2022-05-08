@@ -27,28 +27,32 @@ createBtns();
 
 function createBtns() {
   for (let i=0; i<keysArray.length; i++) {
-  let btn = document.createElement('div');
+    let btn = document.createElement('div');
     btn.innerHTML = keysArray[i];
-     if (keysArray[i] === 'Control') btn.innerHTML = "Ctrl";
-     if (keysArray[i] === 'ArrowUp') btn.innerHTML = '▲';
-     if (keysArray[i] === "ArrowLeft") btn.innerHTML = '◄';
-     if (keysArray[i] === "ArrowDown") btn.innerHTML = '▼';
-     if (keysArray[i] === "ArrowRight") btn.innerHTML = '►';
+      if (keysArray[i] === 'Control') btn.innerHTML = "Ctrl";
+      if (keysArray[i] === 'ArrowUp') btn.innerHTML = '▲';
+      if (keysArray[i] === "ArrowLeft") btn.innerHTML = '◄';
+      if (keysArray[i] === "ArrowDown") btn.innerHTML = '▼';
+      if (keysArray[i] === "ArrowRight") btn.innerHTML = '►';
 
     btn.classList.add('btn');
-     if (keysArray[i] ==='Backspace')  btn.classList.add('btn', 'btn_backspace');
-     if (keysArray[i] ==='Tab')  btn.classList.add('btn', 'btn_tab');
-     if (keysArray[i] ==='Delete')  btn.classList.add('btn', 'btn_del');
-     if (keysArray[i] ==='CapsLock')  btn.classList.add('btn', 'btn_caps');
-     if (keysArray[i] ==='Enter')  btn.classList.add('btn', 'btn_enter');
-     if (keysArray[i] ==='Shift')  btn.classList.add('btn', 'btn_shift');
-     if (keysArray[i] ===' ')  btn.classList.add('btn', 'btn_space');
-     if (keysArray[i] === 'Control')   btn.classList.add('btn', 'btn_ctrl');
-     if (keysArray[i] ==='Alt')  btn.classList.add('btn', 'btn_alt');
+      if (keysArray[i] ==='Backspace')  btn.classList.add('btn', 'btn_backspace');
+      if (keysArray[i] ==='Tab')  btn.classList.add('btn', 'btn_tab');
+      if (keysArray[i] ==='Delete')  btn.classList.add('btn', 'btn_del');
+      if (keysArray[i] ==='CapsLock')  btn.classList.add('btn', 'btn_caps');
+      if (keysArray[i] ==='Enter')  btn.classList.add('btn', 'btn_enter');
+      if (keysArray[i] ==='Shift')  btn.classList.add('btn', 'btn_shift');
+      if (keysArray[i] ===' ')  btn.classList.add('btn', 'btn_space');
+      if (keysArray[i] === 'Control')   btn.classList.add('btn', 'btn_ctrl');
+      if (keysArray[i] ==='Alt')  btn.classList.add('btn', 'btn_alt');
+
+      btn.setAttribute('data-btn', keysArray[i]);
 
     keyboard.append(btn);
-   }
+  }
 }
+
+
 
 
 
