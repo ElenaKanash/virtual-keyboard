@@ -3,11 +3,11 @@
 const container  = document.createElement ('div');
 container.className = "container";
 container.innerHTML = `<h1 class="title"> Rss Keyboard </h1>
-<textarea name="textarea" id="text" class="textarea" autofocus></textarea>
+<textarea name="textarea" id="text" class="textarea" autofocus="true"></textarea>
 <div class="keyboard"></div>
-<p class="text">Для переключения языка комбинация: левыe ctrl + shift</p>
+<p class="text">Для переключения языка комбинация: левыe ctrl + alt</p>
 <p class="text">Клавиатура создана в операционной системе Windows</p>
-`
+` 
 document.body.append(container);
 
 const textarea = document.querySelector('.textarea');
@@ -24,12 +24,13 @@ let keysArray = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '='
 
 
 //add buttons in keyboard
-createBtns();
+
 
 function createBtns() {
   for (let i=0; i<keysArray.length; i++) {
     let btn = document.createElement('div');
-    btn.innerHTML = keysArray[i];
+    btn.innerHTML = keysArray[i]
+   // btn.innerHTML = keysArray[i].toUpperCase();
       if (keysArray[i] === 'Control') btn.innerHTML = "Ctrl";
       if (keysArray[i] === 'ArrowUp') btn.innerHTML = '▲';
       if (keysArray[i] === "ArrowLeft") btn.innerHTML = '◄';
@@ -47,37 +48,59 @@ function createBtns() {
       if (keysArray[i] === 'Control')   btn.classList.add('btn', 'btn_ctrl');
       if (keysArray[i] ==='Alt')  btn.classList.add('btn', 'btn_alt');
 
-      btn.setAttribute('data', keysArray[i]);
+      btn.setAttribute('data-btn', keysArray[i]);
+      btn.setAttribute('data-big', keysArray[i].toUpperCase());
 
     keyboard.append(btn);
   }
 }
 
+createBtns();
+
+//Add active mode to buttons
 let btnKey = document.querySelector('.keyboard .btn');
 let btnKeys = document.querySelectorAll('.keyboard .btn');
 
-//Add active mode to buttons
-
-document.onkeydown = (event) => {
+document.addEventListener('keydown', (event) => {
  // console.log("key:" + event.key) //key:f
  // console.log( "code:"+ event.code) //code:KeyF
     btnKeys.forEach(el => {
     el.classList.remove('active');
   })
-  document.querySelector('.keyboard .btn[data = "'+ event.key +'"]').classList.add('active');
-}
+  document.querySelector('.keyboard .btn[data-btn = "'+ event.key +'"]').classList.add('active');
+  textarea.focus()
+})
 
 btnKeys.forEach(el => {
   el.addEventListener('click', function(event) {
     btnKeys.forEach(el => {
       el.classList.remove('active')
     });
-    let code = this.getAttribute('data');
+    let code = this.getAttribute('data-btn');
     this.classList.add('active');
+    textarea.focus()
     console.log(code)
+    keyboard.value = code
+   // console.log(keyboard.value)
   }
   )
 })
+
+
+keyboard.addEventListener('input', (event) => {
+  console.log(input.value)
+})
+
+
+/*  textarea.addEventListener('keydown', (event) => {
+  preventDefault(event);
+  selectionEnd;
+ }) */
+
+
+
+
+
 
 
 
