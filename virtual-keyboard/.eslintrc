@@ -12,7 +12,8 @@
   },
   "rules": {
     "import/extensions": ["error", "always"],
-    "allowForLoopAfterthoughts": true
+    "allowForLoopAfterthoughts": true,
+    "func-names": "off"
   }
 
 }
