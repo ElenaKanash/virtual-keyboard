@@ -62,6 +62,7 @@ let btnKey = document.querySelector('.keyboard .btn');
 let btnKeys = document.querySelectorAll('.keyboard .btn');
 
 document.addEventListener('keydown', (event) => {
+
  // console.log("key:" + event.key) //key:f
  // console.log( "code:"+ event.code) //code:KeyF
     btnKeys.forEach(el => {
@@ -80,10 +81,13 @@ btnKeys.forEach(el => {
     let code = this.getAttribute('data-btn');
     this.classList.add('active');
     textarea.focus();
+    if(event.key === el.getAttribute('data-btn') || event.key === el.getAttribute('data-big'))
     textarea.value += code;
   }
   )
 })
+
+
 
 
 
