@@ -78,10 +78,18 @@ btnKeys.forEach(el => {
     btnKeys.forEach(el => {
       el.classList.remove('active')
     });
+
     let code = this.getAttribute('data-btn');
+    if (code ==='Control' || code ==='Backspace'|| code ==="Tab"|| code ==="Delete"|| code ==="CapsLock" || code ==="Enter" || code ==="Shift" || code ==="Alt") code = '';
+
+    if (code ==='ArrowUp' ) code = '▲';
+    if (code ==='ArrowLeft') code = '◄';
+    if (code ==='ArrowDown') code = '▼';
+    if (code ==='ArrowRight') code = '►';
     this.classList.add('active');
+
     textarea.focus();
-    if(event.key === el.getAttribute('data-btn') || event.key === el.getAttribute('data-big'))
+    /* if(event.key === el.getAttribute('data-btn') || event.key === el.getAttribute('data-big')) */
     textarea.value += code;
   }
   )
