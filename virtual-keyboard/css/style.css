@@ -1,0 +1,251 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+body {
+  font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.container {
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  height: 100vh;
+}
+
+.title {
+  margin: 10px auto;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.text {
+  margin: 10px auto;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+
+.textarea {
+  width: 700px;
+  height: 100px;
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+.keyboard {
+  width: 710px;
+  height: 230px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 5px;
+  width: 100%;
+  height: 40px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #b5b5b5;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 3px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 3px -1px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #c9c2ee;
+}
+
+.btn.active {
+  -webkit-animation: btn_animation 0.8s linear;
+          animation: btn_animation 0.8s linear;
+}
+
+@-webkit-keyframes btn_animation {
+  0% {
+    background-color: darkslateblue;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes btn_animation {
+  0% {
+    background-color: darkslateblue;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+.btn_tab {
+  width: 55px;
+}
+
+.btn_caps {
+  width: 80px;
+}
+
+.btn_shift {
+  width: 100px;
+}
+
+.btn_ctrl {
+  width: 55px;
+}
+
+.btn_alt {
+  width: 50px;
+}
+
+.btn_backspace {
+  width: 115px;
+}
+
+.btn_enter {
+  width: 120px;
+}
+
+.btn_space {
+  width: 335px;
+}
+
+.btn_del {
+  width: 55px;
+}
