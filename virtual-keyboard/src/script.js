@@ -7,7 +7,7 @@ container.innerHTML = `<h1 class="title"> Rss Keyboard </h1>
 <div class="keyboard"></div>
 <p class="text">Для переключения языка комбинация: левыe ctrl + alt</p>
 <p class="text">Клавиатура создана в операционной системе Windows</p>
-` 
+`
 document.body.append(container);
 
 const textarea = document.querySelector('.textarea');
@@ -57,7 +57,7 @@ function createBtns() {
 
 createBtns();
 
-//Add active mode to buttons
+//Add active mode to buttons on PC Keyboard
 let btnKey = document.querySelector('.keyboard .btn');
 let btnKeys = document.querySelectorAll('.keyboard .btn');
 
@@ -71,6 +71,7 @@ document.addEventListener('keydown', (event) => {
   textarea.focus()
 })
 
+//Add active mode to buttons on virtual Keyboard
 btnKeys.forEach(el => {
   el.addEventListener('click', function(event) {
     btnKeys.forEach(el => {
@@ -78,24 +79,12 @@ btnKeys.forEach(el => {
     });
     let code = this.getAttribute('data-btn');
     this.classList.add('active');
-    textarea.focus()
-    console.log(code)
-    keyboard.value = code
-   // console.log(keyboard.value)
+    textarea.focus();
+    textarea.value += code;
   }
   )
 })
 
-
-keyboard.addEventListener('input', (event) => {
-  console.log(input.value)
-})
-
-
-/*  textarea.addEventListener('keydown', (event) => {
-  preventDefault(event);
-  selectionEnd;
- }) */
 
 
 
